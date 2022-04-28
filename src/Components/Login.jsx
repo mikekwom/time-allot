@@ -2,6 +2,8 @@ import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
+import Register from "./Register";
 
 function Login(props) {
   let navigate = useNavigate();
@@ -19,7 +21,7 @@ function Login(props) {
         localStorage.setItem("id", res.data.id);
         localStorage.setItem("name", res.data.name);
         props.logFunction();
-        navigate("/secret");
+        navigate("/today");
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -29,8 +31,8 @@ function Login(props) {
   /******************** VALIDATION ********************/
   const validate = (values) => {
     const errors = {};
-    if (!values.username) {
-      errors.username = "Email Required";
+    if (!values.email) {
+      errors.email = "Email Required";
     }
     if (!values.password) {
       errors.password = "Password Required";
@@ -52,25 +54,45 @@ function Login(props) {
     <div>
       <h2>Login Page</h2>
       <form onSubmit={formik.handleSubmit}>
-        <input
-          type="text"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-          placeholder="Password"
-        />
+        <div className="mb-3 mt-3">
+          <label for="email" className="form-label">
+            Email:
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            name="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            placeholder="Email"
+          />
+        </div>
+        <div className="mb-3 mt-3">
+          <label for="password" className="form-label">
+            Password:
+          </label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            placeholder="Password"
+          />
+        </div>
         {/* button is disabled until formik is valid */}
-        <button type="submit" disabled={!formik.isValid}>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={!formik.isValid}
+        >
           Submit
         </button>
       </form>
+      <Link to="/register">Create an Account</Link>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 }

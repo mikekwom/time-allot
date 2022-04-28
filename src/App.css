@@ -5,6 +5,13 @@ body {
 header {
   padding-top: 4px;
   background-color: #9e0300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > * {
+  margin-top: 10px;
 }
 
 header > h1 {
@@ -14,9 +21,14 @@ header > h1 {
   color: #fff7ef;
 }
 
+header > p {
+  margin-right: 20px;
+  color: #fff7ef;
+}
+
 .today > .today--top {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .card {

@@ -4,6 +4,7 @@ function Header() {
   return (
     <header>
       <h1>TimeAllot</h1>
+      <p>Log Out</p>
     </header>
   );
 }

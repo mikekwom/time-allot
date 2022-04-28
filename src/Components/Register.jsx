@@ -1,6 +1,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
+import { Routes, Route, Link } from "react-router-dom";
+import Login from "./Login";
 
 function Register() {
   const initialValues = {
@@ -59,36 +61,64 @@ function Register() {
     <div>
       <h2>Register</h2>
       <form onSubmit={formik.handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          onChange={formik.handleChange}
-          value={formik.values.name}
-          placeholder="Name"
-        />
-        <input
-          type="text"
-          name="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          onChange={formik.handleChange}
-          value={formik.values.password}
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          onChange={formik.handleChange}
-          value={formik.values.confirmPassword}
-          placeholder="Confirm Password"
-        />
+        <div className="mb-3 mt-3">
+          <label for="name" className="form-label">
+            Name:
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+            placeholder="John Doe"
+          />
+        </div>
+        <div className="mb-3 mt-3">
+          <label for="email" className="form-label">
+            Email:
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            name="email"
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            placeholder="john56@gmail.com"
+          />
+        </div>
+        <div className="mb-3 mt-3">
+          <label for="password" className="form-label">
+            Password:
+          </label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            onChange={formik.handleChange}
+            value={formik.values.password}
+            placeholder="Password"
+          />
+        </div>
+        <div className="mb-3 mt-3">
+          <label for="confirmPassword" className="form-label">
+            Confirm Password:
+          </label>
+          <input
+            className="form-control"
+            type="password"
+            name="confirmPassword"
+            onChange={formik.handleChange}
+            value={formik.values.confirmPassword}
+            placeholder="Password"
+          />
+        </div>
         {/* button is diabled until formik is valid */}
-        <button type="submit" disabled={!formik.isValid}>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={!formik.isValid}
+        >
           Submit
         </button>
       </form>
@@ -101,6 +131,10 @@ function Register() {
           <div>{formik.errors.confirmPassword}</div>
         ) : null}
       </div>
+      <Link to="/login">Login</Link>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
