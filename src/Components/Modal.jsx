@@ -1,10 +1,6 @@
 import React from "react";
 
 function Modal() {
-  function addGoal() {
-    console.log(input.value);
-  }
-
   return (
     <div className="modal" id="myModal">
       <div className="modal-dialog">
@@ -37,11 +33,7 @@ function Modal() {
                 name="hours"
               />
             </div>
-            <button
-              onClick={console.log(input)}
-              type="submit"
-              className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </form>
