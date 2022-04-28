@@ -1,10 +1,14 @@
 import React from "react";
 
 function Header() {
+  function logOut() {
+    localStorage.clear();
+    window.location.reload();
+  }
   return (
     <header>
       <h1>TimeAllot</h1>
-      <p>Log Out</p>
+      <p onClick={logOut}>Log Out</p>
     </header>
   );
 }

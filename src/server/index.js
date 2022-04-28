@@ -4,8 +4,7 @@ const path = require("path");
 const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
-const sequelize = require("./sequelize");
-const bcrypt = require("bcrypt");
+
 const ctrl = require("./controller");
 
 // Middleware

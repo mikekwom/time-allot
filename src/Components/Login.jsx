@@ -55,7 +55,7 @@ function Login(props) {
       <h2>Login Page</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3 mt-3">
-          <label for="email" className="form-label">
+          <label htmlFor="email" className="form-label">
             Email:
           </label>
           <input
@@ -68,7 +68,7 @@ function Login(props) {
           />
         </div>
         <div className="mb-3 mt-3">
-          <label for="password" className="form-label">
+          <label htmlFor="password" className="form-label">
             Password:
           </label>
           <input

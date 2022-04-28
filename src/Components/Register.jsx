@@ -62,7 +62,7 @@ function Register() {
       <h2>Register</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3 mt-3">
-          <label for="name" className="form-label">
+          <label htmlFor="name" className="form-label">
             Name:
           </label>
           <input
@@ -75,7 +75,7 @@ function Register() {
           />
         </div>
         <div className="mb-3 mt-3">
-          <label for="email" className="form-label">
+          <label htmlFor="email" className="form-label">
             Email:
           </label>
           <input
@@ -88,7 +88,7 @@ function Register() {
           />
         </div>
         <div className="mb-3 mt-3">
-          <label for="password" className="form-label">
+          <label htmlFor="password" className="form-label">
             Password:
           </label>
           <input
@@ -101,7 +101,7 @@ function Register() {
           />
         </div>
         <div className="mb-3 mt-3">
-          <label for="confirmPassword" className="form-label">
+          <label htmlFor="confirmPassword" className="form-label">
             Confirm Password:
           </label>
           <input

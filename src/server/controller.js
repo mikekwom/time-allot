@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
+const sequelize = require("./sequelize");
+const bcrypt = require("bcrypt");
+
 module.exports = {
   register: async (req, res) => {
     const { email, name, password } = req.body;
