@@ -1,6 +1,29 @@
 import React from "react";
+import axios from "axios";
 
 function Modal() {
+  const userEmail = window.localStorage.getItem("email");
+
+  function handleSubmit(event) {
+    // event.preventDefault();
+    // console.log(event.target[0].value);
+    // console.log(event.target[1].value);
+
+    // console.log(goal.title);
+    let bodyObj = {
+      title: event.target[0].value,
+      target_hours: event.target[1].value,
+      userEmail,
+    };
+
+    // console.log(bodyObj);
+
+    axios
+      .post("http://localhost:4000/today", bodyObj)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="modal" id="myModal">
       <div className="modal-dialog">
@@ -14,7 +37,7 @@ function Modal() {
             ></button>
           </div>
 
-          <form className="modal-body">
+          <form className="modal-body" onSubmit={handleSubmit}>
             <div className="mb-3 mt-3">
               <label className="form-label">Title:</label>
               <input

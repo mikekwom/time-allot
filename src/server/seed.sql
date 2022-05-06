@@ -10,4 +10,5 @@ CREATE TABLE goal (
     dedicated_time DECIMAL NOT NULL,
     created TIMESTAMPTZ NOT NULL,
     goal_owner INTEGER REFERENCES client(id) NOT NULL
+    is_complete BOOLEAN;
 );

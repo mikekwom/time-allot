@@ -58,7 +58,7 @@ function Register() {
   });
 
   return (
-    <div>
+    <div className="register-page">
       <h2>Register</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3 mt-3">
@@ -122,16 +122,18 @@ function Register() {
           Submit
         </button>
       </form>
-      <div>
-        {/* if errors exists, return error that display error, else do not display */}
+      {/* if errors exists, return error that display error, else do not display */}
+      {/* <div>
         {formik.errors.email ? <div>{formik.errors.email}</div> : null}
         {formik.errors.name ? <div>{formik.errors.name}</div> : null}
         {formik.errors.password ? <div>{formik.errors.password}</div> : null}
         {formik.errors.confirmPassword ? (
           <div>{formik.errors.confirmPassword}</div>
         ) : null}
-      </div>
-      <Link to="/login">Login</Link>
+      </div> */}
+      <Link to="/login" className="login-page--link">
+        Login
+      </Link>
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>

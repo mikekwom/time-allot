@@ -51,7 +51,7 @@ function Login(props) {
   });
 
   return (
-    <div>
+    <div className="login-page">
       <h2>Login Page</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3 mt-3">
