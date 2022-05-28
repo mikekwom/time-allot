@@ -38,15 +38,6 @@ function CircleCard(props) {
     <div className="circle-card">
       <div className="circle-card--title">{props.item.name}</div>
       <div className="progress progress-round blue">
-        {/* <span className="progress-left">
-          <span
-            className="progress-bar"
-            style={{ width: Math.floor((goalNameSum / totalHours) * 100) }}
-          ></span>
-        </span>
-        <span className="progress-right">
-          <span className="progress-bar"></span>
-        </span> */}
         <div className="progress-value">
           {Math.floor((goalNameSum / totalHours) * 100)}%
         </div>

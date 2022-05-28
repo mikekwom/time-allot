@@ -25,10 +25,6 @@ function Totals() {
     });
   }, []);
 
-  function refreshPage() {
-    window.location.reload();
-  }
-
   const circleCards = data.map((item) => {
     // console.log(item);
     return <CircleCard key={item.id} item={item} />;
@@ -37,13 +33,7 @@ function Totals() {
   return (
     <section className="totals">
       <h4>Total Time Dedicated: {totalHours} hours</h4>
-      <button
-        type="button"
-        className="btn btn-primary refresh"
-        onClick={refreshPage}
-      >
-        Refresh
-      </button>
+
       <section className="circle-cards-list">{circleCards}</section>
     </section>
   );

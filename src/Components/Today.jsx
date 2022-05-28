@@ -24,7 +24,7 @@ function Today() {
   });
 
   return (
-    <div className="today">
+    <div className="container today">
       <div className="today--top">
         <h2>Todays Goals - {today}</h2>
         <button
@@ -39,7 +39,6 @@ function Today() {
       </div>
 
       <section className="cards-list">{cards}</section>
-      <Totals />
     </div>
   );
 }

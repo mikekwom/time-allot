@@ -52,44 +52,51 @@ function Login(props) {
 
   return (
     <div className="login-page">
-      <h2>Login Page</h2>
-      <form onSubmit={formik.handleSubmit}>
-        <div className="mb-3 mt-3">
-          <label htmlFor="email" className="form-label">
-            Email:
-          </label>
-          <input
-            className="form-control"
-            type="text"
-            name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            placeholder="Email"
-          />
-        </div>
-        <div className="mb-3 mt-3">
-          <label htmlFor="password" className="form-label">
-            Password:
-          </label>
-          <input
-            className="form-control"
-            type="password"
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            placeholder="Password"
-          />
-        </div>
-        {/* button is disabled until formik is valid */}
-        <button
-          type="submit"
-          className="btn btn-primary"
-          disabled={!formik.isValid}
-        >
-          Submit
-        </button>
-      </form>
-      <Link to="/register">Create an Account</Link>
+      <div className="new-header">
+        <h1 className="logo new-logo">TimeAllot</h1>
+      </div>
+      <div className="form">
+        <h2>Login Page</h2>
+        <form onSubmit={formik.handleSubmit}>
+          <div className="mb-3 mt-3">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="email"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              placeholder="Email"
+            />
+          </div>
+          <div className="mb-3 mt-3">
+            <label htmlFor="password" className="form-label">
+              Password:
+            </label>
+            <input
+              className="form-control"
+              type="password"
+              name="password"
+              onChange={formik.handleChange}
+              value={formik.values.password}
+              placeholder="Password"
+            />
+          </div>
+          {/* button is disabled until formik is valid */}
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={!formik.isValid}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="login-register--link">
+        <Link to="/register">Create an Account</Link>
+      </div>
       <Routes>
         <Route path="/register" element={<Register />} />
       </Routes>

@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Header from "./Components/Header";
 import Today from "./Components/Today";
 import Login from "./Components/Login";
@@ -17,11 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route
           path="*"
-          element={isLoggedIn ? <Today /> : <Login logFunction={loginClient} />}
+          element={
+            isLoggedIn ? <Header /> : <Login logFunction={loginClient} />
+          }
         />
         <Route path="register" element={<Register />} />
       </Routes>

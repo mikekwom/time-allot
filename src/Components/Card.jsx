@@ -6,7 +6,7 @@ function Cards(props) {
 
   let bodyObj = {
     id: props.item.id,
-    // hours: props.item.dedicated_time,
+    hours: props.item.dedicated_time,
   };
 
   React.useEffect(() => {
@@ -73,9 +73,8 @@ function Cards(props) {
         <section className="item--header">
           <p>{props.item.name}</p>
           <div className="item--header-hours">
-            <p>
-              {hours}/{props.item.target_hours} hours
-            </p>
+            <p className="stopWatch">{hours}</p>
+            <p>/{props.item.target_hours} hours</p>
           </div>
         </section>
         <div className="progress">
@@ -88,37 +87,41 @@ function Cards(props) {
         </div>
         <section className="card--time-btns">
           <button
-            className="changeTimeBtn btn btn-danger"
-            onClick={minus15mins}
-          >
-            -15mins
-          </button>
-          <button
-            className="changeTimeBtn btn btn-success"
+            className="change--time-btn btn btn-success"
             onClick={plus15mins}
           >
             +15mins
           </button>
           <button
-            className="changeTimeBtn btn btn-success"
+            className="change--time-btn btn btn-success"
             onClick={plus30mins}
           >
             +30mins
           </button>
-          <button className="changeTimeBtn btn btn-success" onClick={plus1hr}>
+          <button
+            className="change--time-btn btn btn-success"
+            onClick={plus1hr}
+          >
             +1hr
+          </button>
+          <button
+            className="changeTimeBtn btn btn-danger"
+            onClick={minus15mins}
+          >
+            -15mins
+          </button>
+
+          <button
+            className="card--deleteBtn btn btn-danger"
+            onClick={() => deleteGoal(props.item.id)}
+          >
+            Delete
           </button>
           <button
             className="card--completteBtn btn btn-success"
             onClick={() => markComplete(props.item.id)}
           >
             Complete
-          </button>
-          <button
-            className="card--deleteBtn btn btn-danger"
-            onClick={() => deleteGoal(props.item.id)}
-          >
-            Delete
           </button>
         </section>
       </div>
