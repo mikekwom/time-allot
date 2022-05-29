@@ -63,11 +63,7 @@ h1 {
   border-bottom: 1px darkgray solid;
 }
 
-.logout-btn {
-  font-size: 1rem;
-}
-
-.logout-btn:hover {
+.nav-link:hover {
   cursor: pointer;
 }
 
