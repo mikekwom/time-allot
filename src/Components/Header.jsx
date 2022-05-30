@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Today from "./Today";
 import Totals from "./Totals";
+import Logo from "../images/google_logo.png";
 
 function Header() {
   function logOut() {
@@ -13,7 +14,14 @@ function Header() {
     <div>
       <nav className="navbar navbar-expand-sm navbar-light">
         <div className="container">
-          <h1 className="logo">TimeAllot</h1>
+          <h1 className="logo">
+            <span className="blue">G</span>
+            <span className="red">o</span>
+            <span className="yellow">o</span>
+            <span className="blue">g</span>
+            <span className="green">l</span>
+            <span className="red">e</span> Time
+          </h1>
           <button
             class="navbar-toggler"
             type="button"

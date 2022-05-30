@@ -13,8 +13,26 @@ body {
   margin-right: 1vw;
 }
 
-h1 {
+.logo {
+  font-size: 1.5rem;
+  margin-left: 1.4vw;
   color: #606367;
+}
+
+.blue {
+  color: #5085ec;
+}
+
+.red {
+  color: #d95140;
+}
+
+.yellow {
+  color: #f2be42;
+}
+
+.green {
+  color: #58a55c;
 }
 
 .nav-link {
@@ -27,8 +45,7 @@ h1 {
 }
 
 .new-header {
-  background-color: #9e0300;
-  color: #fff7ef;
+  background-color: white;
   text-align: center;
 }
 
